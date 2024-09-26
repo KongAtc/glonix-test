@@ -17,6 +17,10 @@ const config: Config = {
         seconday: "#00665E",
         body: "#6A6A6A",
       },
+      screens: {
+        xs: "375px",
+        "2xl": "1536px",
+      },
     },
   },
   plugins: [],
