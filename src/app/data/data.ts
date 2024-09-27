@@ -11,6 +11,13 @@ type Course = {
   };
 };
 
+type Category = {
+  id: number;
+  title: string;
+  logoUrl: string;
+  description: string;
+};
+
 export const TitleCourses: Course[] = [
   {
     id: 1,
@@ -47,5 +54,33 @@ export const TitleCourses: Course[] = [
       detail: "CEO Y.I.M Corporation",
       imageUrl: "/Ellipse 4.png",
     },
+  },
+];
+
+export const CourseCategories: Category[] = [
+  {
+    id: 1,
+    title: "Data",
+    description: "เรียนรู้และฝึกฝนกระบวนการคิดสร้างมูลค่าให้ธุรกิจด้วยข้อมูล",
+    logoUrl: "hierarchy-2.png",
+  },
+  {
+    id: 2,
+    title: "Science",
+    description: "เรียนรู้และฝึกฝนกระบวนการคิดด้วยกระบวนการทางวิทยาศาสตร์",
+    logoUrl: "glass.png",
+  },
+  {
+    id: 3,
+    title: "Tech",
+    description: "พร้อมเป็นที่ต้องการของตลาดแรงงานด้วยทักษะการเขียนโปรแกรม",
+    logoUrl: "cloud-connection.png",
+  },
+  {
+    id: 4,
+    title: "Business",
+    description:
+      "พลิกโฉมธุรกิจในยุคดิจิทัลด้วยการเข้าถึงลูกค้าในช่องทางและเวลาที่เหมาะ",
+    logoUrl: "book.png",
   },
 ];
