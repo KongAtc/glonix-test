@@ -1,14 +1,58 @@
 "use client";
 import Image from "next/image";
-import { COURSE_CATEGORIES, TITLE_COURSE } from "../data/data";
+import { COURSE_CATEGORIES, MY_COURSES, TITLE_COURSE } from "../data/data";
 import { useState } from "react";
 
+type CourseType = "my-course" | "online-course";
 export default function MainContent() {
   const [selectedTitle, setSelectedTitle] = useState(1);
+  const [myCourseIndex, setMyCourseIndex] = useState(0);
+  const [onlineCourseIndex, setOnlineCourseIndex] = useState(0);
 
+  function next(type: CourseType) {
+    if (myCourseIndex < MY_COURSES.length - 1) {
+      if (type === "my-course") setMyCourseIndex(myCourseIndex + 1);
+      else if (type === "online-course")
+        setOnlineCourseIndex(onlineCourseIndex + 1);
+    }
+  }
+  function previous(type: CourseType) {
+    if (myCourseIndex > 0) {
+      if (type === "my-course") setMyCourseIndex(myCourseIndex - 1);
+      else if (type === "online-course")
+        setOnlineCourseIndex(onlineCourseIndex - 1);
+    }
+  }
+  const myCourseContent = () => {
+    const selectedCourse = MY_COURSES[myCourseIndex];
+    return (
+      <div
+        style={{ boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.04)" }}
+        className="rounded-3xl"
+        key={`my-course-${selectedCourse.id}`}>
+        <div
+          className="h-[152px] text-white font-semibold w-[304px] bg-no-repeat py-5 px-6"
+          style={{
+            backgroundImage: `url('${selectedCourse.backgroundUrl}')`,
+          }}>
+          <p>{selectedCourse.title}</p>
+        </div>
+        <div className="px-6 py-7 flex flex-col gap-9">
+          <p>{selectedCourse.description}</p>
+          <div>
+            <p>
+              เรียนไปแล้ว{" "}
+              <span className="font-bold">{selectedCourse.progress}%</span>
+            </p>
+            <div className=" rounded-full flex flex-1 bg-[#EEEEEE] py-1" />
+          </div>
+        </div>
+      </div>
+    );
+  };
   return (
     <div className="flex items-center justify-between flex-col mt-5">
-      <div className="flex w-full flex-col xl:flex-row gap-14 justify-between">
+      <div className="flex w-80 xl:w-full flex-col xl:flex-row gap-14 justify-between">
         <div className="flex gap-6 flex-col">
           <div className="relative py-3">
             <p className="text-xl text-seconday font-medium">
@@ -43,7 +87,7 @@ export default function MainContent() {
             </button>
           </div>
         </div>
-        <div className="flex flex-col xl:flex-row gap-4">
+        <div className="flex flex-col items-center xl:flex-row gap-4">
           {TITLE_COURSE.map((course) => {
             const isSelected = selectedTitle === course.id;
             return (
@@ -130,6 +174,68 @@ export default function MainContent() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+      <div className="w-80 xl:w-full mt-20">
+        <div className="flex justify-between items-center">
+          <div className="flex gap-6 items-center">
+            <Image
+              src="/video-vertical.png"
+              width={32}
+              height={32}
+              alt="video-vertical"
+            />
+            <p className="font-bold text-2xl">คอร์สของฉัน</p>
+          </div>
+          <button className="py-2 px-9 border-2 text-lg border-[#A8AD00] text-[#A8AD00] rounded-full">
+            ดูทั้งหมด
+          </button>
+        </div>
+        <div className="flex gap-4 items-center justify-center">
+          <Image
+            onClick={() => previous("my-course")}
+            src="/Group 23.png"
+            width={36}
+            height={36}
+            alt="Group 23"
+            className="w-9 h-9"
+          />
+          <div className="hidden flex-col xl:flex xl:flex-row gap-5 justify-center mt-9">
+            {MY_COURSES.map((myCourse) => (
+              <div
+                style={{ boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.04)" }}
+                className="rounded-3xl"
+                key={`my-course-${myCourse.id}`}>
+                <div
+                  className="h-[152px] text-white font-semibold w-[304px] bg-no-repeat py-5 px-6"
+                  style={{
+                    backgroundImage: `url('${myCourse.backgroundUrl}')`,
+                  }}>
+                  <p>{myCourse.title}</p>
+                </div>
+                <div className="px-6 py-7 flex flex-col gap-9">
+                  <p>{myCourse.description}</p>
+                  <div>
+                    <p>
+                      เรียนไปแล้ว{" "}
+                      <span className="font-bold">{myCourse.progress}%</span>
+                    </p>
+                    <div className=" rounded-full flex flex-1 bg-[#EEEEEE] py-1" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="block xl:hidden mt-9">{myCourseContent()}</div>
+
+          <Image
+            onClick={() => next("my-course")}
+            src="/Group 22.png"
+            width={36}
+            height={36}
+            alt="Group 22"
+            className="w-9 h-9"
+          />
         </div>
       </div>
     </div>
