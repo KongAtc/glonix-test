@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import {
+  BLOGS,
   COURSE_CATEGORIES,
   MY_COURSES,
   ONLINE_COURSES,
@@ -101,13 +102,13 @@ export default function MainContent() {
       <div className="flex w-80 xl:w-full flex-col xl:flex-row gap-14 justify-between">
         <div className="flex gap-6 flex-col">
           <div className="relative py-3">
-            <p className="text-xl text-seconday font-medium">
+            <p className="text-xl text-secondary font-medium">
               Lorem Ipsum is simply dummy .
             </p>
             <div className="w-80 font-semibold text-[3.25rem]">
               <p>
                 learn anytime, anywhere with{" "}
-                <span className="text-seconday">Lorem</span>
+                <span className="text-secondary">Lorem</span>
               </p>
             </div>
             <Image
@@ -359,6 +360,104 @@ export default function MainContent() {
             alt="Group 22"
             className="w-9 h-9"
           />
+        </div>
+      </div>
+      <div className="w-80 xl:w-full mt-20">
+        <div className="flex justify-between items-center">
+          <div className="flex gap-6 items-center">
+            <Image
+              src="/video-vertical.png"
+              width={32}
+              height={32}
+              alt="video-vertical"
+            />
+            <p className="font-bold text-2xl">บทความและข่าวสารล่าสุด</p>
+          </div>
+          <button className="py-2 px-9 border-2 text-lg border-[#A8AD00] text-[#A8AD00] rounded-full">
+            ดูทั้งหมด
+          </button>
+        </div>
+        <div className="flex flex-col xl:flex-row items-center justify-between gap-5 mt-9">
+          <div className="flex-col flex gap-5 justify-between">
+            {BLOGS.slice(0, 2).map((blog) => {
+              return (
+                <div
+                  key={`online-course-${blog.id}`}
+                  className="h-[413px] rounded-3xl w-[627px] flex justify-between"
+                  style={{
+                    boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.04)",
+                  }}>
+                  <div
+                    className="font-bold w-[280px] text-2xl text-white px-10 py-12"
+                    style={{
+                      backgroundImage: `url('${blog.backgroundUrl}')`,
+                    }}>
+                    <p>{blog.title}</p>
+                  </div>
+                  <div className="flex flex-col justify-between gap-6 w-[347px] px-10 py-6">
+                    <div className="space-y-6">
+                      <p className="py-2 px-4 border border-secondary text-secondary rounded-full w-fit">
+                        {blog.type}
+                      </p>
+                      <div className="space-y-2">
+                        <p className="font-bold text-2xl">{blog.subtitle}</p>
+                        <p className="text-xl">{blog.detail}</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      <div className="flex gap-3">
+                        <Image
+                          src="/clock.png"
+                          alt="clock"
+                          width={24}
+                          height={24}
+                        />
+                        <p>{blog.publishedAt}</p>
+                      </div>
+                      <div className="flex gap-3">
+                        <Image
+                          src="/eye.png"
+                          alt="eye"
+                          width={24}
+                          height={24}
+                        />
+                        <p>{blog.viewer}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex flex-col gap-5 grow">
+            {BLOGS.slice(2, BLOGS.length).map((blog) => (
+              <div
+                key={`online-course-${blog.id}`}
+                className="h-[269px] rounded-3xl w-[627px] flex justify-between"
+                style={{
+                  boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.04)",
+                }}>
+                <div
+                  className="font-bold w-[214px] text-xl text-white text-center px-9 flex items-center py-12"
+                  style={{
+                    backgroundImage: `url('${blog.backgroundUrl}')`,
+                  }}>
+                  <p>{blog.title}</p>
+                </div>
+                <div className="flex flex-col justify-between w-[413px] gap-6 px-10 py-6">
+                  <div className="space-y-6">
+                    <p className="py-2 px-4 border border-secondary text-secondary rounded-full w-fit">
+                      {blog.type}
+                    </p>
+                    <div className="space-y-2">
+                      <p className="font-bold text-xl">{blog.subtitle}</p>
+                      <p>{blog.detail}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

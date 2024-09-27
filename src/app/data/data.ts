@@ -27,6 +27,17 @@ type MyCourse = {
   progress: number;
 };
 
+type Blog = {
+  id: number;
+  title: string;
+  type: string;
+  subtitle: string;
+  detail: string;
+  publishedAt: string;
+  viewer: number;
+  backgroundUrl: string;
+};
+
 export const TITLE_COURSE: Course[] = [
   {
     id: 1,
@@ -178,5 +189,63 @@ export const ONLINE_COURSES: Course[] = [
       imageUrl: "/Ellipse 4.png",
     },
     type: "Tech",
+  },
+];
+
+export const BLOGS: Blog[] = [
+  {
+    id: 1,
+    title: "PROFIT / LOSS OF STOCKS IN THE PORTFOLIO",
+    type: "Business",
+    subtitle: "กำไร/ขาดทุนของหุ้นในพอร์ตต้องดูอย่างไร?",
+    detail:
+      "เมื่อซื้อขายหุ้นแล้วสิ่งหนึ่งที่ขาดไม่ได้คือการติดตามดูข้อมูลของหุ้นในพอร์ตว่าตอนนี้ทำไรได้หรือขาดทุนมากน้อยเท่าใด?",
+    publishedAt: "29 กรกฎาคม 2023",
+    viewer: 240,
+    backgroundUrl: "/Group 60.png", // Replace with actual URL or file path
+  },
+  {
+    id: 2,
+    title: "WHAT IS A DATA ENGINEER",
+    type: "Data",
+    subtitle: "Data Engineer คืออะไร?",
+    detail:
+      "Data Engineer คือคนที่ทำงานกับหลากหลายเครื่องมือเพื่อรวบรวมข้อมูลจัดการข้อมูลและเปลี่ยนข้อมูลดิบให้พร้อมใช้งานสำหรับนัก Data Scientist และ Data Analyst",
+    publishedAt: "29 กรกฎาคม 2023",
+    viewer: 240,
+    backgroundUrl: "/Group 61.png", // Replace with actual URL or file path
+  },
+  {
+    id: 3,
+    title: "สารแทนน้ำตาลไม่อันตราย",
+    type: "Science",
+    subtitle: "สารแทนน้ำตาลไม่อันตราย",
+    detail:
+      "สาเหตุที่องค์กรความปลอดภัยแนะนำดังกล่าวมาจากผลการวิจัยล่าสุดที่ชี้ว่าสารแทนน้ำตาลไม่มีประโยชน์ต่อการช่วยลดน้ำหนักหรือลดระดับน้ำตาล",
+    publishedAt: "29 กรกฎาคม 2023",
+    viewer: 240,
+    backgroundUrl: "/Group 57.png", // Replace with actual URL or file path
+  },
+  {
+    id: 4,
+    title: "Data Pipelines With Airflow",
+    type: "Tech",
+    subtitle: "Data Pipelines with Airflow",
+    detail:
+      "เรียนรู้การสร้าง End-to-End Data Pipelines โดยใช้ Apache Airflow ตั้งแต่ขั้นข้อมูลง่ายๆ ทำความสะอาด ปรับใช้ในรูปแบบที่เหมาะสม",
+    publishedAt: "29 กรกฎาคม 2023",
+    viewer: 240,
+    backgroundUrl: "/Group 58.png", // Replace with actual URL or file path
+  },
+  {
+    id: 5,
+    title: "ร่างกายสามารถย้อนวัย “อายุชีวภาพ”",
+    type: "Science",
+    subtitle: "ร่างกายสามารถย้อนวัย “อายุชีวภาพ”",
+    detail:
+      "ความชราเริ่มต้นหรือการเสื่อมของเซลล์และอวัยวะมนุษย์นั้น จัดกันด้วย 'อายุชีวภาพ' ซึ่งอาจจะแตกต่างจากอายุจริง",
+    publishedAt: "29 กรกฎาคม 2023",
+    viewer: 240,
+    backgroundUrl: "/Group 59.png", // Replace with actual URL or file path
   },
 ];

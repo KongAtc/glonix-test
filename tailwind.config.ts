@@ -14,8 +14,11 @@ const config: Config = {
       },
       textColor: {
         primary: "#313131",
-        seconday: "#00665E",
+        secondary: "#00665E",
         body: "#6A6A6A",
+      },
+      borderColor: {
+        secondary: "#00665E",
       },
       screens: {
         xs: "375px",

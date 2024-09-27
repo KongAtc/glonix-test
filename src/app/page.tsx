@@ -8,7 +8,7 @@ export default function Home() {
       <div className="max-w-[1280px] w-full pt-4 md:pt-[38px] px-5">
         <nav className="flex justify-between w-full items-center">
           <div className="flex gap-4 sm:gap-8 items-center">
-            <p className="text-seconday font-semibold text-[2.125rem]">LOGO</p>
+            <p className="text-secondary font-semibold text-[2.125rem]">LOGO</p>
             <div className="flex gap-2 sm:gap-6">
               <Link href="" className="text-body">
                 รายวิชา
