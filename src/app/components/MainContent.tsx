@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { CourseCategories, TitleCourses } from "../data/data";
+import { COURSE_CATEGORIES, TITLE_COURSE } from "../data/data";
 import { useState } from "react";
 
 export default function MainContent() {
@@ -44,7 +44,7 @@ export default function MainContent() {
           </div>
         </div>
         <div className="flex flex-col xl:flex-row gap-4">
-          {TitleCourses.map((course) => {
+          {TITLE_COURSE.map((course) => {
             const isSelected = selectedTitle === course.id;
             return (
               <div
@@ -103,7 +103,7 @@ export default function MainContent() {
           <p className="font-bold text-2xl">เลือกเรียนตามหัวข้อที่สนใจ</p>
         </div>
         <div className="flex flex-col xl:flex-row gap-5 mt-9">
-          {CourseCategories.map((category) => (
+          {COURSE_CATEGORIES.map((category) => (
             <div
               className="px-6 py-5 rounded-3xl gap-5 flex flex-col"
               style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
