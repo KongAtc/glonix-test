@@ -9,6 +9,7 @@ type Course = {
     name: string;
     detail: string;
   };
+  type?: string;
 };
 
 type Category = {
@@ -121,5 +122,61 @@ export const MY_COURSES: MyCourse[] = [
     description: "องค์ประกอบของการเป็นผู้ประกอบการ SME ที่ประสบความสำเร็จ",
     backgroundUrl: "my-course-4.png",
     progress: 80,
+  },
+];
+
+export const ONLINE_COURSES: Course[] = [
+  {
+    id: 1,
+    title: "ลงทุนหุ้นมั่นใจ ต้องเข้าใจปัจจัยพื้นฐาน",
+    description: "รู้และเข้าใจปัจจัยที่ส่งผลกระทบต่อราคาหุ้น",
+    backgroundUrl: "/Group 51.png",
+    backgroundColor: "#002E2A",
+    author: {
+      name: "ณัฐกานต์ สิทธิชัยอนันต์",
+      detail: "CEO Y.I.M Corporation",
+      imageUrl: "/Ellipse 1.png",
+    },
+    type: "Business",
+  },
+  {
+    id: 2,
+    title: "Progressive Web Application",
+    description:
+      "การพัฒนา Application ด้วยคอนเซ็ปท์ Progressive Web Application (PWA)",
+    backgroundUrl: "/Group 52.png",
+    backgroundColor: "#95FFE5",
+    author: {
+      name: "ปัญจมพงศ์ เสริมสวัสดิ์ศรี",
+      detail: "Google Developers",
+      imageUrl: "/Ellipse 2.png",
+    },
+    type: "Data",
+  },
+  {
+    id: 3,
+    title: "React Hooks in Action",
+    description: "เรียนรู้การเขียน React Hooks แบบ Best Practice",
+    backgroundUrl: "/Group 54.png",
+    backgroundColor: "#FCFF8B",
+    author: {
+      name: "วรัทธน์ วงศ์มณีกิจ",
+      detail: "Co-Founder",
+      imageUrl: "/Ellipse 3.png",
+    },
+    type: "Science",
+  },
+  {
+    id: 4,
+    title: "Generative AI and ChatGPT: Design Thinking Edition",
+    description: "ปลดล็อกขีดจำกัดการทำงานด้วยพลัง AI",
+    backgroundUrl: "/Group 53.png",
+    backgroundColor: "#FCFF8B",
+    author: {
+      name: "ทัศน์พล รัชตะสัมฤทธิ์",
+      detail: "Software Engineer",
+      imageUrl: "/Ellipse 4.png",
+    },
+    type: "Tech",
   },
 ];

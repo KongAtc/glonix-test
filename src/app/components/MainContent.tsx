@@ -1,6 +1,11 @@
 "use client";
 import Image from "next/image";
-import { COURSE_CATEGORIES, MY_COURSES, TITLE_COURSE } from "../data/data";
+import {
+  COURSE_CATEGORIES,
+  MY_COURSES,
+  ONLINE_COURSES,
+  TITLE_COURSE,
+} from "../data/data";
 import { useState } from "react";
 
 type CourseType = "my-course" | "online-course";
@@ -10,18 +15,19 @@ export default function MainContent() {
   const [onlineCourseIndex, setOnlineCourseIndex] = useState(0);
 
   function next(type: CourseType) {
-    if (myCourseIndex < MY_COURSES.length - 1) {
-      if (type === "my-course") setMyCourseIndex(myCourseIndex + 1);
-      else if (type === "online-course")
-        setOnlineCourseIndex(onlineCourseIndex + 1);
-    }
+    if (type === "my-course" && myCourseIndex < MY_COURSES.length - 1)
+      setMyCourseIndex(myCourseIndex + 1);
+    else if (
+      type === "online-course" &&
+      onlineCourseIndex < ONLINE_COURSES.length - 1
+    )
+      setOnlineCourseIndex(onlineCourseIndex + 1);
   }
   function previous(type: CourseType) {
-    if (myCourseIndex > 0) {
-      if (type === "my-course") setMyCourseIndex(myCourseIndex - 1);
-      else if (type === "online-course")
-        setOnlineCourseIndex(onlineCourseIndex - 1);
-    }
+    if (type === "my-course" && myCourseIndex > 0)
+      setMyCourseIndex(myCourseIndex - 1);
+    else if (type === "online-course" && onlineCourseIndex > 0)
+      setOnlineCourseIndex(onlineCourseIndex - 1);
   }
   const myCourseContent = () => {
     const selectedCourse = MY_COURSES[myCourseIndex];
@@ -45,6 +51,46 @@ export default function MainContent() {
               <span className="font-bold">{selectedCourse.progress}%</span>
             </p>
             <div className=" rounded-full flex flex-1 bg-[#EEEEEE] py-1" />
+          </div>
+        </div>
+      </div>
+    );
+  };
+  const onlineCourse = () => {
+    const selectedOnlineCourse = ONLINE_COURSES[onlineCourseIndex];
+    const isEven = onlineCourseIndex % 2 === 0;
+    return (
+      <div
+        key={`online-course-${selectedOnlineCourse.id}`}
+        className={`h-[548px] rounded-3xl w-[304px] flex flex-col justify-between bg-no-repeat py-11 px-7 ${
+          isEven ? "text-black" : "text-white"
+        }`}
+        style={{
+          backgroundImage: `url('${selectedOnlineCourse.backgroundUrl}')`,
+          boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.04)",
+        }}>
+        <div className="flex flex-col gap-7">
+          <p
+            className={`py-2 px-4 border rounded-full w-fit ${
+              isEven
+                ? "border-[#7B7B7B] text-[#7B7B7B]"
+                : "border-white text-[#B6B6B6]"
+            }`}>
+            {selectedOnlineCourse.type}
+          </p>
+          <p className="font-bold text-2xl">{selectedOnlineCourse.title}</p>
+          <p className="text-xl">{selectedOnlineCourse.description}</p>
+        </div>
+        <div className="flex gap-4 items-center">
+          <Image
+            src={selectedOnlineCourse.author.imageUrl}
+            width={55}
+            height={55}
+            alt={selectedOnlineCourse.author.imageUrl}
+          />
+          <div>
+            <p>{selectedOnlineCourse.author.name}</p>
+            <p>{selectedOnlineCourse.author.detail}</p>
           </div>
         </div>
       </div>
@@ -230,6 +276,83 @@ export default function MainContent() {
 
           <Image
             onClick={() => next("my-course")}
+            src="/Group 22.png"
+            width={36}
+            height={36}
+            alt="Group 22"
+            className="w-9 h-9"
+          />
+        </div>
+      </div>
+      <div className="w-80 xl:w-full mt-20">
+        <div className="flex justify-between items-center">
+          <div className="flex gap-6 items-center">
+            <Image
+              src="/video-vertical.png"
+              width={32}
+              height={32}
+              alt="video-vertical"
+            />
+            <p className="font-bold text-2xl">คอร์สออนไลน์</p>
+          </div>
+          <button className="py-2 px-9 border-2 text-lg border-[#A8AD00] text-[#A8AD00] rounded-full">
+            ดูทั้งหมด
+          </button>
+        </div>
+        <div className="flex gap-4 items-center justify-center">
+          <Image
+            onClick={() => previous("online-course")}
+            src="/Group 23.png"
+            width={36}
+            height={36}
+            alt="Group 23"
+            className="w-9 h-9"
+          />
+          <div className="hidden flex-col xl:flex xl:flex-row gap-5 justify-center mt-9">
+            {ONLINE_COURSES.map((onlineCourse, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div
+                  key={`online-course-${onlineCourse.id}`}
+                  className={`h-[548px] rounded-3xl w-[304px] flex flex-col justify-between bg-no-repeat py-11 px-7 ${
+                    isEven ? "text-black" : "text-white"
+                  }`}
+                  style={{
+                    backgroundImage: `url('${onlineCourse.backgroundUrl}')`,
+                    boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.04)",
+                  }}>
+                  <div className="flex flex-col gap-7">
+                    <p
+                      className={`py-2 px-4 border rounded-full w-fit ${
+                        isEven
+                          ? "border-[#7B7B7B] text-[#7B7B7B]"
+                          : "border-white text-[#B6B6B6]"
+                      }`}>
+                      {onlineCourse.type}
+                    </p>
+                    <p className="font-bold text-2xl">{onlineCourse.title}</p>
+                    <p className="text-xl">{onlineCourse.description}</p>
+                  </div>
+                  <div className="flex gap-4 items-center">
+                    <Image
+                      src={onlineCourse.author.imageUrl}
+                      width={55}
+                      height={55}
+                      alt={onlineCourse.author.imageUrl}
+                    />
+                    <div>
+                      <p>{onlineCourse.author.name}</p>
+                      <p>{onlineCourse.author.detail}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="block xl:hidden mt-9">{onlineCourse()}</div>
+
+          <Image
+            onClick={() => next("online-course")}
             src="/Group 22.png"
             width={36}
             height={36}
