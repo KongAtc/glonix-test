@@ -141,30 +141,28 @@ export default function MainContent() {
               <div
                 onClick={() => setSelectedTitle(course.id)}
                 key={`course-${course.id}`}
-                className={`p-10 xl:h-[548px] rounded-3xl relative xl:flex flex-col justify-between bg-no-repeat ${
+                className={`p-10 xl:h-[548px] w-full rounded-3xl relative gap-5 flex-col flex bg-no-repeat bg-cover justify-between ${
                   isSelected
                     ? "w-80 h-[25rem] xl:w-[412px] text-white"
-                    : "xl:w-[150px] w-80"
+                    : "xl:w-[150px] w-full"
                 }`}
                 style={{
                   backgroundImage: `url('${course.backgroundUrl}')`,
                 }}>
-                <div
-                  className="absolute w-full top-0 left-0 opacity-80 z-10 h-full rounded-3xl"
-                  style={{ background: course.backgroundColor }}
-                />
-                <div className="z-20 flex flex-col">
+                <div className="flex flex-col">
                   <p
-                    className={
-                      isSelected ? "font-bold text-3xl" : "font-bold text-3xl"
-                    }>
+                    className={`${
+                      isSelected
+                        ? "font-bold text-3xl"
+                        : "font-bold text-3xl xl:-rotate-90 xl:-translate-x-1/3 xl:translate-y-12 xl:w-64 break-words"
+                    }`}>
                     {course.title}
                   </p>
                   {isSelected && (
                     <span className="text-2xl">{course.description}</span>
                   )}
                 </div>
-                <div className="flex gap-4 z-20 items-center">
+                <div className="flex gap-4 items-center">
                   <Image
                     src={course.author.imageUrl}
                     width={55}

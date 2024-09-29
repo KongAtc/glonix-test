@@ -3,7 +3,6 @@ type Course = {
   title: string;
   description: string;
   backgroundUrl: string;
-  backgroundColor: string;
   author: {
     imageUrl: string;
     name: string;
@@ -43,8 +42,7 @@ export const TITLE_COURSE: Course[] = [
     id: 1,
     title: "Generative AI and ChatGPT: Design Thinking Edition",
     description: "ปลดล็อกขีดจำกัดการทำงานด้วยพลัง AI",
-    backgroundUrl: "Rectangle 2.png",
-    backgroundColor: "#002E2A",
+    backgroundUrl: "Group 64.png",
     author: {
       name: "ณัฐกานต์ สิทธิชัยอนันต์",
       detail: "CEO Y.I.M Corporation",
@@ -55,8 +53,7 @@ export const TITLE_COURSE: Course[] = [
     id: 2,
     title: "Generative ChatGPT: UX Design Edition",
     description: "ปลดล็อกขีดจำกัดการทำงานด้วยพลัง AI",
-    backgroundUrl: "Rectangle 3.png",
-    backgroundColor: "#95FFE5",
+    backgroundUrl: "Group 63.png",
     author: {
       name: "ณัฐกานต์ สิทธิชัยอนันต์",
       detail: "CEO Y.I.M Corporation",
@@ -67,8 +64,7 @@ export const TITLE_COURSE: Course[] = [
     id: 3,
     title: "UX Accelerator Bundle",
     description: "ปลดล็อกขีดจำกัดการทำงานด้วยพลัง AI",
-    backgroundUrl: "Rectangle 9.png",
-    backgroundColor: "#FCFF8B",
+    backgroundUrl: "Group 62.png",
     author: {
       name: "ณัฐกานต์ สิทธิชัยอนันต์",
       detail: "CEO Y.I.M Corporation",
@@ -142,7 +138,6 @@ export const ONLINE_COURSES: Course[] = [
     title: "ลงทุนหุ้นมั่นใจ ต้องเข้าใจปัจจัยพื้นฐาน",
     description: "รู้และเข้าใจปัจจัยที่ส่งผลกระทบต่อราคาหุ้น",
     backgroundUrl: "/Group 51.png",
-    backgroundColor: "#002E2A",
     author: {
       name: "ณัฐกานต์ สิทธิชัยอนันต์",
       detail: "CEO Y.I.M Corporation",
@@ -156,7 +151,6 @@ export const ONLINE_COURSES: Course[] = [
     description:
       "การพัฒนา Application ด้วยคอนเซ็ปท์ Progressive Web Application (PWA)",
     backgroundUrl: "/Group 52.png",
-    backgroundColor: "#95FFE5",
     author: {
       name: "ปัญจมพงศ์ เสริมสวัสดิ์ศรี",
       detail: "Google Developers",
@@ -169,7 +163,6 @@ export const ONLINE_COURSES: Course[] = [
     title: "React Hooks in Action",
     description: "เรียนรู้การเขียน React Hooks แบบ Best Practice",
     backgroundUrl: "/Group 54.png",
-    backgroundColor: "#FCFF8B",
     author: {
       name: "วรัทธน์ วงศ์มณีกิจ",
       detail: "Co-Founder",
@@ -182,7 +175,6 @@ export const ONLINE_COURSES: Course[] = [
     title: "Generative AI and ChatGPT: Design Thinking Edition",
     description: "ปลดล็อกขีดจำกัดการทำงานด้วยพลัง AI",
     backgroundUrl: "/Group 53.png",
-    backgroundColor: "#FCFF8B",
     author: {
       name: "ทัศน์พล รัชตะสัมฤทธิ์",
       detail: "Software Engineer",
