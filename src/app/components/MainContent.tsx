@@ -383,12 +383,12 @@ export default function MainContent() {
               return (
                 <div
                   key={`online-course-${blog.id}`}
-                  className="h-[413px] rounded-3xl w-[627px] flex justify-between"
+                  className="xl:h-[413px] rounded-3xl w-full xl:w-[627px] flex flex-col xl:flex-row justify-between"
                   style={{
                     boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.04)",
                   }}>
                   <div
-                    className="font-bold w-[280px] text-2xl text-white px-10 py-12"
+                    className="font-bold xl:rounded-none rounded-t-3xl w-full object-cover bg-no-repeat bg-cover xl:w-[280px] text-2xl text-white px-10 py-12"
                     style={{
                       backgroundImage: `url('${blog.backgroundUrl}')`,
                     }}>
@@ -433,18 +433,18 @@ export default function MainContent() {
             {BLOGS.slice(2, BLOGS.length).map((blog) => (
               <div
                 key={`online-course-${blog.id}`}
-                className="h-[269px] rounded-3xl w-[627px] flex justify-between"
+                className="xl:h-[269px] rounded-3xl w-full xl:w-[627px] flex flex-col xl:flex-row justify-between"
                 style={{
                   boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.04)",
                 }}>
                 <div
-                  className="font-bold w-[214px] text-xl text-white text-center px-9 flex items-center py-12"
+                  className="font-bold xl:rounded-none rounded-t-3xl bg-no-repeat bg-cover xl:w-[214px] text-xl text-white text-center px-9 flex items-center py-12"
                   style={{
                     backgroundImage: `url('${blog.backgroundUrl}')`,
                   }}>
                   <p>{blog.title}</p>
                 </div>
-                <div className="flex flex-col justify-between w-[413px] gap-6 px-10 py-6">
+                <div className="flex flex-col justify-between w-full xl:w-[413px] gap-6 px-10 py-6">
                   <div className="space-y-6">
                     <p className="py-2 px-4 border border-secondary text-secondary rounded-full w-fit">
                       {blog.type}
