@@ -20,6 +20,9 @@ const config: Config = {
       borderColor: {
         secondary: "#00665E",
       },
+      backgroundColor: {
+        secondary: "#00665E",
+      },
       screens: {
         xs: "375px",
         "2xl": "1536px",

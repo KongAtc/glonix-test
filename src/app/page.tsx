@@ -4,7 +4,7 @@ import MainContent from "./components/MainContent";
 
 export default function Home() {
   return (
-    <div className="flex justify-center flex-col items-center">
+    <div className="flex justify-center w-full flex-col items-center">
       <div className="max-w-[1280px] w-full pt-4 md:pt-[38px] px-5">
         <nav className="flex justify-between w-full items-center">
           <div className="flex gap-4 sm:gap-8 items-center">
@@ -45,50 +45,79 @@ export default function Home() {
         </nav>
         <MainContent />
       </div>
+      <footer className="bg-secondary w-full flex justify-center items-center text-white py-10">
+        <div className="max-w-[1280px] text-center xl:text-left grow space-y-8">
+          <p className="font-bold text-[4rem]">LOGO</p>
+          <div className="border" />
+          <div className="flex flex-wrap xl:flex-row flex-col justify-between gap-6">
+            <div className="flex-col flex gap-3 xl:gap-7">
+              <p className="font-bold text-xl">คอร์สของเรา</p>
+              <div className="flex flex-col gap-2 xl:gap-4">
+                <Link href="/">Data</Link>
+                <Link href="/">Science</Link>
+                <Link href="/">Tech</Link>
+                <Link href="/">Business</Link>
+              </div>
+            </div>
+            <div className="flex-col flex gap-3 xl:gap-7">
+              <p className="font-bold text-xl">เกี่ยวกับเรา</p>
+              <div className="flex flex-col gap-2 xl:gap-4">
+                <Link href="/">สอนกับเรา</Link>
+                <Link href="/">ติดต่อสอบถามเพิ่มเติม</Link>
+                <Link href="/">แจ้งปัญหาเกี่ยวกับระบบ</Link>
+                <Link href="/">ช่องทางการร้องเรียน</Link>
+              </div>
+            </div>
+            <div className="flex-col flex gap-3 xl:gap-7">
+              <p className="font-bold text-xl">ความปลอดภัย</p>
+              <div className="flex flex-col gap-2 xl:gap-4">
+                <Link href="/">Privacy Policy</Link>
+                <Link href="/">Terms and Conditions</Link>
+                <Link href="/">Data Protection Policy Six</Link>
+                <Link href="/">Cookie Policy</Link>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <p className="font-bold text-xl">ความปลอดภัย</p>
+              <p>199 ม.6 ต.ทุ่งสุขลา อ.ศรีราชา จ.ชลบุรี 20230</p>
 
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer">
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer">
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer">
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+              <div className="justify-center flex xl:flex- gap-2 flex-col items-center xl:items-start">
+                <p className="font-bold">ติดต่อเรา</p>
+                <div className="flex gap-4">
+                  <Image
+                    src="/youtube.png"
+                    alt="youtube"
+                    width={24}
+                    height={24}
+                  />
+                  <Image
+                    src="/facebook.png"
+                    alt="facebook"
+                    width={24}
+                    height={24}
+                  />
+                  <Image
+                    src="/twitter.png"
+                    alt="twitter"
+                    width={24}
+                    height={24}
+                  />
+                  <Image
+                    src="/instagram.png"
+                    alt="instagram"
+                    width={24}
+                    height={24}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="border" />
+          <div className="flex flex-col xl:flex-row justify-between">
+            <p>Y.I.M Corporation @ 2023. All rights reserved.</p>
+            <p>0-3835-4580-4 , 0-3835-2611-6</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
