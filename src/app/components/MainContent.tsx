@@ -236,7 +236,7 @@ export default function MainContent() {
             ดูทั้งหมด
           </button>
         </div>
-        <div className="flex gap-4 items-center justify-center">
+        <div className="flex gap-4 w-full items-center justify-center">
           <Image
             onClick={() => previous("my-course")}
             src="/Group 23.png"
@@ -245,11 +245,11 @@ export default function MainContent() {
             alt="Group 23"
             className="w-9 h-9"
           />
-          <div className="hidden flex-col xl:flex xl:flex-row gap-5 justify-center mt-9">
+          <div className="hidden w-full flex-col xl:flex xl:flex-row gap-5 justify-center mt-9">
             {MY_COURSES.map((myCourse) => (
               <div
                 style={{ boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.04)" }}
-                className="rounded-3xl"
+                className="rounded-3xl w-full"
                 key={`my-course-${myCourse.id}`}>
                 <div
                   className="h-[152px] text-white font-semibold w-[304px] bg-no-repeat py-5 px-6"
@@ -258,14 +258,19 @@ export default function MainContent() {
                   }}>
                   <p>{myCourse.title}</p>
                 </div>
-                <div className="px-6 py-7 flex flex-col gap-9">
+                <div className="px-6 py-7 flex w-full flex-col gap-9">
                   <p>{myCourse.description}</p>
-                  <div>
+                  <div className="w-full">
                     <p>
                       เรียนไปแล้ว{" "}
                       <span className="font-bold">{myCourse.progress}%</span>
                     </p>
-                    <div className=" rounded-full flex flex-1 bg-[#EEEEEE] py-1" />
+                    <div className="rounded-full flex w-full flex-1 bg-[#EEEEEE]">
+                      <span
+                        style={{ width: `${myCourse.progress}%` }}
+                        className={`rounded-full h-1 bg-[#A8AD00]`}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
