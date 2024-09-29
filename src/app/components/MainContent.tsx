@@ -460,6 +460,37 @@ export default function MainContent() {
           </div>
         </div>
       </div>
+      <div className="w-80 flex flex-col gap-9 xl:w-full mt-20">
+        <div className="flex gap-6 items-center">
+          <Image
+            src="/video-vertical.png"
+            width={32}
+            height={32}
+            alt="video-vertical"
+          />
+          <p className="font-bold text-2xl">คอร์สออนไลน์</p>
+        </div>
+        <div
+          className="w-full rounded-3xl px-10 py-11 space-y-4"
+          style={{ boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.04)" }}>
+          <div className="space-y-3">
+            <p className="font-bold text-xl">หัวข้อกระทู้</p>
+            <input
+              placeholder="หัวข้อกระทู้"
+              className="px-6 py-3 border rounded-xl"
+            />
+          </div>
+          <div className="space-y-3">
+            <p className="font-bold text-xl">เนื้อหา</p>
+            <textarea className="border w-full rounded-xl px-6 py-3" />
+          </div>
+          <div className="flex justify-end items-center">
+            <button className="rounded-xl bg-[#A8AD00] text-white px-2 py-4 w-full xl:w-[145px]">
+              ส่ง
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
