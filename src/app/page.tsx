@@ -45,7 +45,7 @@ export default function Home() {
         </nav>
         <MainContent />
       </div>
-      <footer className="bg-secondary w-full flex justify-center items-center text-white py-10">
+      <footer className="bg-secondary mt-20 w-full flex justify-center items-center text-white py-10">
         <div className="max-w-[1280px] text-center xl:text-left grow space-y-8">
           <p className="font-bold text-[4rem]">LOGO</p>
           <div className="border" />
